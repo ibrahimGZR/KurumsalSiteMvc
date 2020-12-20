@@ -2,12 +2,31 @@
     ViewBag.Title = "Home Page";
 }
 
+<!-- section featured -->
+<section id="main-slider">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Anasayfa</h2>
-        <p>
-            içerik............................................................
-        </p>
-        
-</div>
+    <!-- slideshow start here -->
+    @Html.Partial("_MainSlider")
+
+    <!-- slideshow end here -->
+
+</section>
+<!-- /section featured -->
+
+<div class="blankline30"></div>
+<section id="work-titles">
+    @Html.Partial("_WorkTitles")
+
+</section>
+<section id="work-info">
+    @Html.Partial("_Workİnfo")
+
+</section>
+
+
+<section id="work-partners">
+    @Html.Partial("_WorkPartners")
+
+
+
+</section>

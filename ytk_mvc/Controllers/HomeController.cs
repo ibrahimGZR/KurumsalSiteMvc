@@ -12,14 +12,18 @@ namespace ytk_mvc.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult Products()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your product page.";
 
             return View();
         }
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your description page.";
 
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
