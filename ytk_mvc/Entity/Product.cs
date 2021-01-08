@@ -18,11 +18,10 @@ namespace ytk_mvc.Entity
         [DefaultValue(0)]
         public double DiscontRate { get; set; }
         public int Stock { get; set; }
-        public string Image { get; set; }
-        public bool IsHome { get; set; }
-        public bool IsDiscont{ get; set; }
-        public bool IsApproved { get; set; }
+        public bool IsVisible { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public int ImageFolderId { get; set; }
+        public ImageFolder ImageFolders { get; set; }
+        public Category Categories { get; set; }
     }
 }

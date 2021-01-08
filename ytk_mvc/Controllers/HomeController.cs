@@ -18,6 +18,12 @@ namespace ytk_mvc.Controllers
 
             return View();
         }
+        public ActionResult Projects()
+        {
+            ViewBag.Message = "Your projects page.";
+
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your description page.";

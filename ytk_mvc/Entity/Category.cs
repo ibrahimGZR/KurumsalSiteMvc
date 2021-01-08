@@ -18,7 +18,10 @@ namespace ytk_mvc.Entity
 
         [DisplayName("Açıklama")]
         public string Description { get; set; }
+        public bool IsVisible { get; set; }
 
         public List<Product> Products { get; set; }
+
+        public List<Project> Projects { get; set; }
     }
 }

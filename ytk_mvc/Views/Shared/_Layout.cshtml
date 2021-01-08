@@ -3,220 +3,72 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Your page description here" />
-    <meta name="author" content="" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
+    <title>Eterna Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-    <!-- css -->
-    <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="~/Content/Eterna/Eterna/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/Eterna/Eterna/css/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="~/Content/Eterna/Eterna/css/flexslider.css" rel="stylesheet" />
-    <link href="~/Content/Eterna/Eterna/css/prettyPhoto.css" rel="stylesheet" />
-    <link href="~/Content/Eterna/Eterna/css/camera.css" rel="stylesheet" />
-    <link href="~/Content/Eterna/Eterna/css/jquery.bxslider.css" rel="stylesheet" />
-    <link href="~/Content/Eterna/Eterna/css/style.css" rel="stylesheet" />
+    <!-- Favicons -->
+    <link href="~/Content/Eterna/assets/img/favicon.png" rel="icon">
+    <link href="~/Content/Eterna/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Theme skin -->
-    <link href="~/Content/Eterna/Eterna/color/default.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/Eterna/Eterna/ico/apple-touch-icon-144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/Eterna/Eterna/ico/apple-touch-icon-114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/Eterna/Eterna/ico/apple-touch-icon-72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="~/Content/Eterna/Eterna/ico/apple-touch-icon-57-precomposed.png" />
-    <link rel="shortcut icon" href="~/Content/Eterna/Eterna/ico/favicon.png" />
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/Eterna/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Eterna/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/Content/Eterna/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/Eterna/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/Eterna/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Content/Eterna/assets/vendor/venobox/venobox.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="~/Content/Eterna/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
-      Theme Name: Eterna
-      Theme URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-      Author: BootstrapMade.com
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
+    * Template Name: Eterna - v3.0.0
+    * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
 </head>
 
 <body>
 
-    <div id="wrapper">
-
-        <!-- start header -->
-        <header>
-            <div class="top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="social-network">
-                                <li><i class="icon-phone icon-white">  +62 088 999 123</i></li>
-                                <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a></li>
-                                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
-                                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a></li>
-                                <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a></li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row nomargin">
-                    <div class="col-md-4">
-                        <div class="logo">
-                            <a href="/"><img src="~/Content/Eterna/Eterna/img/logo.png" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="navbar navbar-static-top">
-                            <div class="navigation">
-                                <nav>
-                                    <ul class="nav topnav">
-                                        <li class="active">
-                                            <a href="/Home/Index"><i class="icon-home"></i> Home </a>
-
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a href="/Home/Products">Ürünler <i class="icon-angle-down"></i></a>
-                                            <ul class="dropdown-menu">
-                                                
-                                                <li><a href="~/Content/Eterna/Eterna/portfolio-4cols.html">Portfolio 4 columns</a></li>
-                                                <li><a href="~/Content/Eterna/Eterna/portfolio-detail.html">Portfolio detail</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li><a href="/Home/About">About us</a></li>
-
-                                        @*<li class="dropdown">
-            <a href="#">Blog <i class="icon-angle-down"></i></a>
-            <ul class="dropdown-menu">
-                <li><a href="~/Content/Eterna/Eterna/blog-left-sidebar.html">Blog left sidebar</a></li>
-                <li><a href="~/Content/Eterna/Eterna/blog-right-sidebar.html">Blog right sidebar</a></li>
-                <li><a href="~/Content/Eterna/Eterna/blog-fullwidth.html">Blog fullwidth</a></li>
-                <li><a href="~/Content/Eterna/Eterna/post-left-sidebar.html">Post left sidebar</a></li>
-                <li><a href="~/Content/Eterna/Eterna/post-right-sidebar.html">Post right sidebar</a></li>
-            </ul>
-        </li>*@
-                                        <li><a href="/Home/Contact">Contact </a></li>
-
-                                        <li><a href="~/Content/Eterna/Eterna/faq.html">FAQ</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- end navigation -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- end header -->
 
 
+    <!-- start header -->
+    @Html.Partial("_Header")
+    <!-- end header -->
+
+
+    <main id="main">
         @RenderBody()
+    </main>
+
+    <!-- start footer -->
+    @Html.Partial("_Footer")
+    <!-- end footer -->
 
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="span4">
-                        <div class="widget">
-                            <h5 class="widgetheading">Browse pages</h5>
-                            <ul class="link-list">
-                                <li><a href="#">Our company</a></li>
-                                <li><a href="#">Terms and conditions</a></li>
-                                <li><a href="#">Privacy policy</a></li>
-                                <li><a href="#">Press release</a></li>
-                                <li><a href="#">What we have done</a></li>
-                                <li><a href="#">Our support forum</a></li>
-                            </ul>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-                        </div>
-                    </div>
-                    <div class="span4">
-                        <div class="widget">
-                            <h5 class="widgetheading">Get in touch</h5>
-                            <address>
-                                <strong>Eterna company Inc.</strong><br>
-                                Somestreet 200 VW, Suite Village A.001<br>
-                                Jakarta 13426 Indonesia
-                            </address>
-                            <p>
-                                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                                <i class="icon-envelope-alt"></i> email@domainname.com
-                            </p>
-                        </div>
-                    </div>
-                    <div class="span4">
-                        <div class="widget">
-                            <h5 class="widgetheading">Subscribe newsletter</h5>
-                            <p>
-                                Keep updated for new releases and freebies. Enter your e-mail and subscribe to our newsletter.
-                            </p>
+    <!-- Vendor JS Files -->
+    <script src="~/Content/Eterna/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/Content/Eterna/assets/vendor/venobox/venobox.min.js"></script>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="sub-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="span6">
-                            <div class="copyright">
-                                <p><span>&copy; Eterna company. All right reserved</span></p>
-                            </div>
-
-                        </div>
-
-                        <div class="span6">
-                            <div class="credits">
-                                <!--
-                                  All the links in the footer should remain intact.
-                                  You can delete the links only if you purchased the pro version.
-                                  Licensing information: https://bootstrapmade.com/license/
-                                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Eterna
-                                -->
-                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i></a>
-    <!-- javascript
-      ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="~/Content/Eterna/Eterna/js/jquery.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/jquery.easing.1.3.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/bootstrap.js"></script>
-
-    <script src="~/Content/Eterna/Eterna/js/modernizr.custom.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/toucheffects.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/google-code-prettify/prettify.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/jquery.bxslider.min.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/camera/camera.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/camera/setting.js"></script>
-
-    <script src="~/Content/Eterna/Eterna/js/jquery.prettyPhoto.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/portfolio/jquery.quicksand.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/portfolio/setting.js"></script>
-
-    <script src="~/Content/Eterna/Eterna/js/jquery.flexslider.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/animate.js"></script>
-    <script src="~/Content/Eterna/Eterna/js/inview.js"></script>
-
-    <!-- Contact Form JavaScript File -->
-    <script src="~/Content/Eterna/Eterna/contactform/contactform.js"></script>
-
-    <!-- Template Custom JavaScript File -->
-    <script src="~/Content/Eterna/Eterna/js/custom.js"></script>
+    <!-- Template Main JS File -->
+    <script src="~/Content/Eterna/assets/js/main.js"></script>
 
 </body>
 </html>

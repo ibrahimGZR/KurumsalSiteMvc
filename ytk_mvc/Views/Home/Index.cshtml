@@ -2,31 +2,26 @@
     ViewBag.Title = "Home Page";
 }
 
-<!-- section featured -->
-<section id="main-slider">
 
+<section id="hero">
     <!-- slideshow start here -->
     @Html.Partial("_MainSlider")
-
     <!-- slideshow end here -->
-
 </section>
-<!-- /section featured -->
 
-<div class="blankline30"></div>
-<section id="work-titles">
+
+<section id="featured" class="featured">
     @Html.Partial("_WorkTitles")
 
 </section>
-<section id="work-info">
+<section id="about" class="about">
     @Html.Partial("_Workİnfo")
 
 </section>
 
 
-<section id="work-partners">
+<section id="clients" class="clients">
     @Html.Partial("_WorkPartners")
-
-
-
 </section>
+
+
