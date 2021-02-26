@@ -13,7 +13,7 @@ namespace ytk_mvc.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202101070406420_InitialCreate"; }
+            get { return "202101301917397_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

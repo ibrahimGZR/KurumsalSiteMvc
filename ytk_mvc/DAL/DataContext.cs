@@ -11,7 +11,7 @@ namespace ytk_mvc.DAL
     {
         public DataContext() : base("dataConnection")
         {
-
+            //Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
         }
 
         public DbSet<Product> Products { get; set; }
@@ -21,5 +21,9 @@ namespace ytk_mvc.DAL
         public DbSet<Project> Projects { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<ImageFolder> ImageFolders { get; set; }
+        public DbSet<ParticalPage> ParticalPages { get; set; }
+        public DbSet<Partner> Partners { get; set; }
+        public DbSet<Client> Clients { get; set; }
     }
 }

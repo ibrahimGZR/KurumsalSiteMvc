@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ytk_mvc.Entity.Project>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categories.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.ClientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageFolders.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVisible)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categories.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clients.ClientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageFolders.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVisible)
+        </td>
+        <td>
+            @Html.ActionLink("Detaylar", "Details", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" }) |
+            @Html.ActionLink("Güncelle", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-sm" }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>

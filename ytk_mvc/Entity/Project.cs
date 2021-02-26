@@ -14,11 +14,14 @@ namespace ytk_mvc.Entity
         public string Name { get; set; }
         [DisplayName("Proje Açıklama")]
         public string Description { get; set; }
+        public DateTime Date { get; set; }
         public double Price { get; set; }
         [DefaultValue(true)]
         public bool IsVisible { get; set; }
-        public int CategoryId { get; set; }
+        public int ClientId { get; set; }
         public int ImageFolderId { get; set; }
+        public int CategoryId { get; set; }
+        public Client Clients { get; set; }
         public ImageFolder ImageFolders { get; set; }
         public Category Categories { get; set; }
     }
