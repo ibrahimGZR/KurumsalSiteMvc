@@ -7,7 +7,7 @@ using ytk_mvc.Entity;
 
 namespace ytk_mvc.DAL
 {
-    public class DataInitializer : DropCreateDatabaseAlways<DataContext>
+    public class DataInitializer : DropCreateDatabaseIfModelChanges<DataContext>
     {
         protected override void Seed(DataContext context)
         {
@@ -25,7 +25,9 @@ namespace ytk_mvc.DAL
             //
             var Categories = new List<Category>()
             {
-                new Category(){ Name="Pencere", Description="açıklama"}
+                new Category(){ Name="Pencere", Description="açıklama", IsVisible=true},
+                new Category(){ Name="Kapı", Description="açıklama", IsVisible=true},
+                new Category(){ Name="Balkon", Description="açıklama", IsVisible=true}
             };
 
             foreach (var category in Categories)
@@ -39,7 +41,10 @@ namespace ytk_mvc.DAL
                 new ImageFolder(){ Name = "sliders"},
                 new ImageFolder(){ Name = "Project-1"},
                 new ImageFolder(){ Name = "Product-1"},
-                new ImageFolder(){ Name = "Partner-1"}
+                new ImageFolder(){ Name = "Partner-1"},
+                new ImageFolder(){ Name = "Project-2"},
+                new ImageFolder(){ Name = "Project-3"},
+                new ImageFolder(){ Name = "Product-2"}
 
             };
 
@@ -54,9 +59,19 @@ namespace ytk_mvc.DAL
                 new Image(){ ImageName = "slide-1.jpg", Description="pikapen", ImageFolderId=1},
                 new Image(){ ImageName = "slide-2.jpg", Description="pikapen", ImageFolderId=1},
                 new Image(){ ImageName = "slide-3.jpg", Description="pikapen", ImageFolderId=1},
-                new Image(){ ImageName = "Project-1-1.jpg", Description="pikapen", ImageFolderId=2},
+                new Image(){ ImageName = "0.jpg", Description="pikapen", ImageFolderId=2},
                 new Image(){ ImageName = "Product-1-1.jpg", Description="pikapen", ImageFolderId=3},
-                new Image(){ ImageName = "Partner-1-1.jpg", Description="pikapen", ImageFolderId=4}
+                new Image(){ ImageName = "Partner-1-1.jpg", Description="pikapen", ImageFolderId=4},
+                new Image(){ ImageName = "0.jpg", Description="pikapen", ImageFolderId=5},
+                new Image(){ ImageName = "1.jpg", Description="pikapen", ImageFolderId=5},
+                new Image(){ ImageName = "2.jpg", Description="pikapen", ImageFolderId=5},
+                new Image(){ ImageName = "1.jpg", Description="pikapen", ImageFolderId=2},
+                new Image(){ ImageName = "2.jpg", Description="pikapen", ImageFolderId=2},
+                new Image(){ ImageName = "0.jpg", Description="pikapen", ImageFolderId=6},
+                new Image(){ ImageName = "0.jpg", Description="pikapen", ImageFolderId=7},
+                new Image(){ ImageName = "1.jpg", Description="pikapen", ImageFolderId=6},
+                new Image(){ ImageName = "2.jpg", Description="pikapen", ImageFolderId=6}
+
 
             };
 
@@ -68,7 +83,9 @@ namespace ytk_mvc.DAL
             //
             var Clients = new List<Client>()
             {
-                new Client(){ ClientName="İbrahim GEZER", CompanyName="Derya Sitesi", Adress="A108 Adam Street, New York, NY 535022", Phone="+1 5589 55488 55", Email="contact@example.com"}
+                new Client(){ ClientName="İbrahim GEZER", CompanyName="Derya Sitesi", Adress="A108 Adam Street, New York, NY 535022", Phone="+1 5589 55488 55", Email="contact@example.com"},
+                new Client(){ ClientName="İsmail GEZER", CompanyName="Ola Sitesi", Adress="A7077 Adam Street, New York, NY 535022", Phone="+1 5589 55488 55", Email="contact1@example.com"},
+                new Client(){ ClientName="Zafer GEZER", CompanyName="Dostlar Apartmanı", Adress="A677 Adam Street, New York, NY 535022", Phone="+1 5589 55488 55", Email="dostlar@example.com"}
             };
 
             foreach (var client in Clients)
@@ -76,11 +93,13 @@ namespace ytk_mvc.DAL
                 context.Clients.Add(client);
             }
             context.SaveChanges();
-            
+
             //
             var Projects = new List<Project>()
             {
-                new Project(){ Name = "Derya sitesi", Description="sitenin pencereleri takıldı", Price=10000,Date=DateTime.Now, ClientId=1, CategoryId=1, ImageFolderId=2 }
+                new Project(){ Name = "Derya sitesi", Description="sitenin pencereleri takıldı", Price=10000,Date=DateTime.Now, IsVisible=true, ClientId=1, CategoryId=1, ImageFolderId=2 },
+                new Project(){ Name = "Ola sitesi", Description="sitenin kapıları takıldı", Price=10000,Date=DateTime.Now, IsVisible=true, ClientId=2, CategoryId=2, ImageFolderId=5 },
+                new Project(){ Name = "Dostlar Apartmanı", Description="apartmanın bolkonları yapıldı", Price=25000,Date=DateTime.Now, IsVisible=true, ClientId=3, CategoryId=3, ImageFolderId=6 }
 
             };
 
@@ -92,7 +111,8 @@ namespace ytk_mvc.DAL
             //
             var Products = new List<Product>()
             {
-                new Product(){ Name = "Pikapen pencere", Description="ayazpen pencere", Price=200, Stock=50, CategoryId=1, ImageFolderId=3 }
+                new Product(){ Name = "Pikapen pencere", Description="ayazpen pencere", Price=200, Stock=50, CategoryId=1, ImageFolderId=3 },
+                new Product(){ Name = "Pikapen kapı", Description="ayazpen kapı", Price=400, Stock=50, CategoryId=2, ImageFolderId=7 }
 
             };
 
@@ -113,7 +133,7 @@ namespace ytk_mvc.DAL
                 context.Partners.Add(partner);
             }
             context.SaveChanges();
-            
+
             //
             var ContactInfos = new List<ContactInfo>()
             {
@@ -125,8 +145,8 @@ namespace ytk_mvc.DAL
                 context.ContactInfos.Add(contactinfo);
             }
             context.SaveChanges();
-            
-            
+
+
 
             base.Seed(context);
         }

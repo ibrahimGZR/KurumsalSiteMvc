@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using ytk_mvc.DAL;
 using ytk_mvc.Models;
+using ytk_mvc.Entity;
+using System.Data.Entity;
 
 namespace ytk_mvc.Controllers
 {
@@ -23,28 +25,56 @@ namespace ytk_mvc.Controllers
         }
         public ActionResult Projects()
         {
-            var projects = _context.Projects
+            var category = _context.Categories
                             .Where(i => i.IsVisible == true)
-                            .Select(i => new ProjectModel()
-                            {   
-                                Id=i.Id,
-                                Name=i.Name,
-                                Description=i.Description,
-                                Date=i.Date,
-                                Price=i.Price,
-                                CategoryId=i.CategoryId,
-                                ClientId=i.ClientId,
-                                ImageFolderId=i.ImageFolderId
-                            }).ToList();
+                            .Select(i => new CategoryModel()
+                            {
+                                Id = i.Id,
+                                Name = i.Name,
+                                Description = i.Description
 
-            return View(projects);
+                            }).ToList();
+                            
+
+            var projects = _context.Projects
+                           .Include(p => p.Categories)
+                           .Include(p => p.Clients)
+                           .Include(p => p.ImageFolders)
+                           .Where(i => i.IsVisible == true)
+                           .Select(i => new ProjectModel()
+                           {
+                               Id = i.Id,
+                               Name = i.Name,
+                               Description = i.Description,
+                               Date = i.Date,
+                               Price = i.Price,
+                               CategoryId = i.CategoryId,
+                               Categories = i.Categories,
+                               ClientId = i.ClientId,
+                               Clients = i.Clients,
+                               ImageFolderId = i.ImageFolderId,
+                               ImageFolders = i.ImageFolders
+
+                           }).ToList();
+
+            ProjectPage projectPage = new ProjectPage { Category = category, Project = projects };
+
+
+
+
+
+            return View(projectPage);
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            ViewBag.Message = "Your details page.";
-
-            return View();
+            var projects = _context.Projects
+                .Include(p => p.Categories)
+                .Include(p => p.Clients)
+                .Include(p => p.ImageFolders)
+                .Include(p => p.ImageFolders.Images)
+                .Where(i => i.Id == id).FirstOrDefault();
+            return View(projects);
         }
         public ActionResult About()
         {
@@ -57,6 +87,17 @@ namespace ytk_mvc.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult Contact([Bind(Include = "Id,Name,Email,Subject,Message")] ContactMessage contactMessage)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.ContactMessages.Add(contactMessage);
+                _context.SaveChanges();
+                //return RedirectToAction("~/Home/Contact");
+            }
+            return View(contactMessage);
         }
     }
 }

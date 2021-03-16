@@ -129,7 +129,10 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ContactInfoesController.cs" />
+    <Compile Include="Controllers\ContactMessagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageFoldersController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PanelController.cs" />
     <Compile Include="Controllers\PartnersController.cs" />
@@ -156,8 +159,10 @@
       <DependentUpon>202101301917397_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\ProjectPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -420,6 +425,21 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\ContactMessages\Create.cshtml" />
+    <Content Include="Views\ContactMessages\Delete.cshtml" />
+    <Content Include="Views\ContactMessages\Details.cshtml" />
+    <Content Include="Views\ContactMessages\Edit.cshtml" />
+    <Content Include="Views\ContactMessages\Index.cshtml" />
+    <Content Include="Views\ImageFolders\Create.cshtml" />
+    <Content Include="Views\ImageFolders\Delete.cshtml" />
+    <Content Include="Views\ImageFolders\Details.cshtml" />
+    <Content Include="Views\ImageFolders\Edit.cshtml" />
+    <Content Include="Views\ImageFolders\Index.cshtml" />
+    <Content Include="Views\Images\Create.cshtml" />
+    <Content Include="Views\Images\Delete.cshtml" />
+    <Content Include="Views\Images\Details.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

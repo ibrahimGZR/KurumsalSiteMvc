@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ytk_mvc.Entity.ContactMessage
+@{
     ViewBag.Title = "Contact";
 }
 
@@ -7,10 +8,10 @@
     <div class="container">
 
         <ol>
-            <li><a href="/">Home</a></li>
-            <li>Contact</li>
+            <li><a href="/">Anasayfa</a></li>
+            <li>İletişim</li>
         </ol>
-        <h2>Contact</h2>
+        <h2>İletişim</h2>
 
     </div>
 </section><!-- End Breadcrumbs -->
@@ -22,7 +23,7 @@
             <div class="col-lg-6">
                 <div class="info-box mb-4">
                     <i class="bx bx-map"></i>
-                    <h3>Our Address</h3>
+                    <h3>Adres</h3>
                     <p>A108 Adam Street, New York, NY 535022</p>
                 </div>
             </div>
@@ -30,7 +31,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="info-box  mb-4">
                     <i class="bx bx-envelope"></i>
-                    <h3>Email Us</h3>
+                    <h3>Email</h3>
                     <p>contact@example.com</p>
                 </div>
             </div>
@@ -38,7 +39,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="info-box  mb-4">
                     <i class="bx bx-phone-call"></i>
-                    <h3>Call Us</h3>
+                    <h3>Telefon</h3>
                     <p>+1 5589 55488 55</p>
                 </div>
             </div>
@@ -52,34 +53,35 @@
             </div>
 
             <div class="col-lg-6">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <form action="~/Home/Contact" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="Name" class="form-control" id="name" placeholder="İsminiz" data-rule="minlen:3" data-msg="Lütfen isminizi girin" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="Email" id="email" placeholder="E-mail adresiniz" data-rule="email" data-msg="Lütfen e-mail adresinizi girin" />
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="Subject" id="subject" placeholder="Konu" data-rule="minlen:4" data-msg="Lütfen mesajınızın konusunu girin" />
                             <div class="validate"></div>
                         </div>
-                        <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="Message" rows="5" data-rule="required" data-msg="Lütfen mesajınızı girin" placeholder="Mesajınız"></textarea>
                             <div class="validate"></div>
                         </div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validate"></div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                        <div class="validate"></div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
-                </form>
-            </div>
+                        <div class="mb-3">
+                            <div class="loading">Gönderiliyor</div>
+                            @*<div class="error-message">Mesajınız iletilirken bir hata oluştu!</div>*@
+                            <div class="sent-message">Mesajınız iletildi. Teşekkürler!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Gönder</button></div>
+                    </form>
 
+                
+            </div>
         </div>
 
     </div>

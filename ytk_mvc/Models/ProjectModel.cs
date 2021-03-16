@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using ytk_mvc.Entity;
 
 namespace ytk_mvc.Models
 {
@@ -21,5 +22,9 @@ namespace ytk_mvc.Models
         public int ClientId { get; set; }
         public int ImageFolderId { get; set; }
         public int CategoryId { get; set; }
+
+        public Client Clients { get; set; }
+        public ImageFolder ImageFolders { get; set; }
+        public Category Categories { get; set; }
     }
 }

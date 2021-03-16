@@ -1,4 +1,6 @@
-﻿
+﻿@using ytk_mvc.Entity;
+@model Project
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,10 +11,11 @@
     <div class="container">
 
         <ol>
-            <li><a href="/">Home</a></li>
-            <li>Portfolio Details</li>
+            <li><a href="/">Anasayfa</a></li>
+            <li><a href="/Home/Projects">Projeler</a></li>
+            <li>Proje</li>
         </ol>
-        <h2>Portfolio Details</h2>
+        <h2>Proje</h2>
 
     </div>
 </section><!-- End Breadcrumbs -->
@@ -22,29 +25,36 @@
 
         <div class="row">
 
+
+
             <div class="col-lg-8">
-                <h2 class="portfolio-title">This is an example of portfolio detail</h2>
+                <h2 class="portfolio-title">Proje Detayları</h2>
                 <div class="owl-carousel portfolio-details-carousel">
-                    <img src="/Content/Eterna/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                    <img src="/Content/Eterna/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                    <img src="/Content/Eterna/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+
+
+
+                    @foreach (var image in Model.ImageFolders.Images)
+                    {
+                        <img src="~/Upload/img/@Model.ImageFolders.Name/@image.ImageName" class="img-fluid" alt="" height="350" width="350">
+
+                    }
+
                 </div>
             </div>
+            @{
+                <div class="col-lg-4 portfolio-info">
+                    <h3>Proje Bilgileri</h3>
+                    <ul>
+                        <li><strong>Categori</strong>: @Model.Categories.Name</li>
+                        <li><strong>Müşteri</strong>: @Model.Clients.CompanyName</li>
+                        <li><strong>Tarih</strong>: @Model.Date.ToShortDateString()</li>
+                    </ul>
 
-            <div class="col-lg-4 portfolio-info">
-                <h3>Project information</h3>
-                <ul>
-                    <li><strong>Category</strong>: Web design</li>
-                    <li><strong>Client</strong>: ASU Company</li>
-                    <li><strong>Project date</strong>: 01 March, 2020</li>
-                    <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                </ul>
-
-                <p>
-                    Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                </p>
-            </div>
-
+                    <p>
+                        @Model.Description
+                    </p>
+                </div>
+            }
         </div>
 
     </div>
